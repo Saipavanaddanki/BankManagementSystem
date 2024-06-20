@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+align-items: center;
+justify-content: center;
+background-color:gray;
+}
+#btn{
+height:90px;
+width:200px;
+color:white;
+font-weight:bolder;
+font-size:20px;
+background: black;
+margin-top:100px;
+margin-left:200px;
+}
+form{
+margin-top:300px;
+margin-left:600px;
+height:300px;
+width:800px;
+background-color:red;
+color:white;
+font-size: 80px;
+}
+</style>
+<script type="text/javascript">
+const amount=document.getElementById("amount");
+amount.addEventListener("focusout",()=>{
+	if(amount.value>0){
+		window.alert("amount must be in positive");
+	}
+	else if(typeOf(amount)!="number"){
+		window.alert("amount must be in numeric");
+	}
+})
+
+</script>
+</head>
+<body>
+<form action="withdraw" method="post">
+<label for="amount">Enter the Amount:</label>
+<input type="text" name="amount" id="amount"/>
+<input type="submit" value="withdraw"  id="btn"/>
+</form>
+</body>
+</html>
